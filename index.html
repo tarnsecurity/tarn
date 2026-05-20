@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tarn</title>
+<title>tarn — open source security & infra</title>
 <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -289,6 +289,112 @@
     line-height: 1.65;
   }
 
+  /* PROJECTS SECTION */
+  .projects-section {
+    padding: 4rem 2.5rem;
+    background: var(--bg);
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .project-card {
+    background: #fff;
+    border-radius: var(--radius-md);
+    border: 0.5px solid var(--border);
+    padding: 1.8rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(107,95,228,0.1);
+  }
+
+  .project-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .project-name {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+  }
+
+  .project-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #E1F5EE;
+    color: #0F6E56;
+    border-radius: var(--radius-pill);
+    padding: 3px 10px;
+    font-size: 11px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .project-status-dot {
+    width: 5px;
+    height: 5px;
+    background: #0F6E56;
+    border-radius: 50%;
+  }
+
+  .project-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  .project-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 0.5px solid var(--border);
+  }
+
+  .project-lang {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-family: 'DM Mono', monospace;
+    color: var(--muted);
+  }
+
+  .lang-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #3572A5;
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    color: var(--purple);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  }
+
+  .project-link:hover { opacity: 0.7; }
+
   /* BANNER */
   .banner {
     background: var(--purple);
@@ -407,6 +513,7 @@
     .nav-links { display: none; }
     .hero { padding: 4rem 1.2rem 3rem; }
     .cards-section { padding: 3rem 1.2rem; }
+    .projects-section { padding: 3rem 1.2rem; }
     .banner { padding: 3.5rem 1.2rem; }
     footer { padding: 1.2rem; flex-direction: column; align-items: flex-start; }
   }
@@ -420,7 +527,7 @@
     <span class="nav-wordmark">tarn</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#">projects</a></li>
+    <li><a href="#projects">projects</a></li>
     <li><a href="#">research</a></li>
     <li><a href="https://github.com/tarnsecurity" target="_blank">github</a></li>
   </ul>
@@ -446,7 +553,7 @@
   </div>
 </section>
 
-<section class="cards-section" id="projects">
+<section class="cards-section">
   <p class="section-label">what we do</p>
   <div class="cards-grid">
     <div class="card">
@@ -480,6 +587,34 @@
   </div>
 </section>
 
+<section class="projects-section" id="projects">
+  <p class="section-label">projects</p>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-card-top">
+        <span class="project-name">sheltr</span>
+        <span class="project-status">
+          <div class="project-status-dot"></div>
+          active
+        </span>
+      </div>
+      <p class="project-desc">A CLI secret scanner that detects hardcoded API keys, tokens, and credentials across your codebase before they end up somewhere they shouldn't.</p>
+      <div class="project-card-footer">
+        <span class="project-lang">
+          <span class="lang-dot"></span>
+          Python
+        </span>
+        <a href="https://github.com/tarnsecurity/sheltr" target="_blank" class="project-link">
+          view repo
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <section class="banner">
   <h2>something's always cooking</h2>
   <p>follow along or reach out — we build in the open.</p>
@@ -492,7 +627,7 @@
 <footer>
   <div class="footer-left">
     <div class="logo-mark" style="width:30px;height:30px;border-radius:9px;font-size:13px;">t</div>
-    <span>tarn © 2025</span>
+    <span>tarn © 2026</span>
   </div>
   <ul class="footer-links">
     <li><a href="https://github.com/tarnsecurity" target="_blank">github</a></li>
